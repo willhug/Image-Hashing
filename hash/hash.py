@@ -52,10 +52,12 @@ def runHashInDir(dir):
         current = [image]
         current.extend(dict[hash])
         dict[hash] = current
+        image.save('dups/'+current)
         print "DUPLICATE"
         dups = dups + 1
       else:
         value = [image]
+        image.save('newImages/'+value)
         dict[hash] = value
     except:
       pass
@@ -65,11 +67,11 @@ def runHashInDir(dir):
   print dict
   
   print "SHOWING DUPLICATES"
-  for values in dict.values():
-    if values is not None:  
-      if(len(values) > 1):
-          print values
-          showAll(values)
-  print "THERE ARE " + dups + " DUPLICATES"
+  #for values in dict.values():
+  #  if values is not None:  
+  #    if(len(values) > 1):
+  #        print values
+  #        showAll(values)
+  #print "THERE ARE " + dups + " DUPLICATES"
 
 runHashInDir("/Users/willhughes/Dropbox/Backgrounds/")

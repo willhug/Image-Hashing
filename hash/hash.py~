@@ -1,6 +1,0 @@
-from PIL import Image
-
-def hashImage(img):
-  return img
-
-hashImage("hello)
